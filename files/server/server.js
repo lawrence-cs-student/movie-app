@@ -7,9 +7,8 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", (req,res) => {
-	res.send("Hello")
-	
-})
+	res.send("Hello");
+});
 
 app.post('/api', (req, res) => {
 	try {
