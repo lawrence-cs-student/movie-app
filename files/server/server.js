@@ -5,7 +5,13 @@ const cors = require('cors');
 const app = express();
 app.use(urlencoded({ extended: true }));
 app.use(json()); 
-app.use(cors());
+
+const corsOptions = {
+  origin: 'https://movie-app-client-six.vercel.app/',
+  optionsSuccessStatus: 200, 
+};
+
+app.use(cors(corsOptions));
 
 app.get("/", (req,res) => {
 	res.send("Hello");
@@ -33,6 +39,7 @@ app.post('/api', (req, res) => {
 		res.status(500).json({ error: "Internal server error" });
 	}
 });
+
 
 
 const port = process.env.PORT || 3000;
