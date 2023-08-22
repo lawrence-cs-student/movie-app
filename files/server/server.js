@@ -1,29 +1,25 @@
 const express = require("express");
-const { urlencoded, json } = require("express");
 const https = require('https');
-const cors = require('cors');
 const app = express();
-app.use(urlencoded({ extended: true }));
-app.use(json()); 
+const cors = require('cors');
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cors());
 
-const corsOptions = {
-  origin: 'https://movie-app-client-six.vercel.app/',
-  optionsSuccessStatus: 200, 
-};
 
-app.use(cors(corsOptions));
 
 app.get("/", (req,res) => {
 	res.send("Hello");
 });
 
 app.post('/api', (req, res) => {
+	res.send("Hi")
 	try {
 		const query = req.body.userData;
 		const apiKey = "1533a067069e9baf8f0955e004133efb";
 		const url = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${apiKey}`;
 		console.log(url);
-		get(url, (response) => {
+		https.get(url, (response) => {
 		let data = '';
 		response.on('data', (chunk) => {
 			data += chunk;
@@ -39,7 +35,6 @@ app.post('/api', (req, res) => {
 		res.status(500).json({ error: "Internal server error" });
 	}
 });
-
 
 
 const port = process.env.PORT || 3000;
