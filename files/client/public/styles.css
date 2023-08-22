@@ -20,6 +20,7 @@ body {
     height: auto;
     background-color: #110B1D;
     backdrop-filter: blur(50px);
+    overflow-x: hidden;
 }
 
 #body {
