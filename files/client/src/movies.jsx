@@ -13,7 +13,7 @@ export default function SelectedMovie(props) {
 
     return (
         <div className="movie-details">
-            <div><img src={`https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`}></img></div>
+            <div><img src={`https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`} alt="not available"></img></div>
             <p>release date: </p>
             <p>{selectedMovie.release_date}</p>
             <p>ratings:</p>
