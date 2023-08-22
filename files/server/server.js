@@ -1,4 +1,5 @@
-import express, { urlencoded, json } from "express";
+const express = require("express");
+const { urlencoded, json } = require("express");
 import { get } from 'https';
 const app = express();
 import cors from 'cors';
