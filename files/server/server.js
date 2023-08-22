@@ -1,9 +1,9 @@
-const express = require("express");
-const https = require('https');
+import express, { urlencoded, json } from "express";
+import { get } from 'https';
 const app = express();
-const cors = require('cors');
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+import cors from 'cors';
+app.use(urlencoded({ extended: true }));
+app.use(json());
 app.use(cors());
 
 app.get("/", (req,res) => {
@@ -16,7 +16,7 @@ app.post('/api', (req, res) => {
 		const apiKey = "1533a067069e9baf8f0955e004133efb";
 		const url = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${apiKey}`;
 		console.log(url);
-		https.get(url, (response) => {
+		get(url, (response) => {
 		let data = '';
 		response.on('data', (chunk) => {
 			data += chunk;
