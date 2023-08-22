@@ -23,6 +23,7 @@ export default function App () {
                 return response.json();
             } else {
                 alert("Error fetching the data from the server");
+                throw new Error("Request failed with status: " + response.status);
             }
         }).then (fetchedData  => {
             setMovies(fetchedData);
