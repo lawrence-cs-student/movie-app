@@ -13,7 +13,6 @@ app.get("/", (req,res) => {
 });
 
 app.post('/api', (req, res) => {
-	res.send("Hi")
 	try {
 		const query = req.body.userData;
 		const apiKey = "1533a067069e9baf8f0955e004133efb";
