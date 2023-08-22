@@ -6,38 +6,33 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
-exports.apiHandler = async (event) => {
-  try {
-    const query = event.body.userData;
-    const apiKey = "1533a067069e9baf8f0955e004133efb";
-    const url = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${apiKey}`;
+app.get("/", (req,res) => {
+	res.send("Hello");
+});
 
-    return new Promise((resolve, reject) => {
-      https.get(url, (response) => {
-        let data = '';
-        response.on('data', (chunk) => {
-          data += chunk;
-        });
+app.post('/api', (req, res) => {
+	try {
+		const query = req.body.userData;
+		const apiKey = "1533a067069e9baf8f0955e004133efb";
+		const url = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${apiKey}`;
+		console.log(url);
+		https.get(url, (response) => {
+		let data = '';
+		response.on('data', (chunk) => {
+			data += chunk;
+		});
 
-        response.on('end', () => {
-          const convertedData = JSON.parse(data);
-          resolve({
-            statusCode: 200,
-            body: JSON.stringify(convertedData),
-          });
-        });
-
-        response.on('error', (error) => {
-          reject(error);
-        });
-      });
-    });
-  } catch (error) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: "Internal server error" }),
-    };
-  }
-};
+		response.on('end', () => {
+			const convertedData = JSON.parse(data)
+			res.json(convertedData);
+		});
+	});
+	} catch (error) {
+		console.log(error)
+		res.status(500).json({ error: "Internal server error" });
+	}
+});
 
 
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Listening to port ${port}`))
