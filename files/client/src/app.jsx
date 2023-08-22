@@ -11,7 +11,7 @@ export default function App () {
         const input = {userData}
         console.log(input);
         event.preventDefault();  
-        fetch("http://localhost:3000/api", {
+        fetch("https://movie-app-server-ufsn.onrender.com/api", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
