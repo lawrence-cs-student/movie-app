@@ -75,6 +75,8 @@ input {
     background-color: azure;
     margin-top: 5%;
     border: 0;
+    font-family: var(--text-style);
+    font-size: var(--text-size-small);
 }
 
 input::placeholder {
@@ -98,8 +100,9 @@ svg {
     display: flex;
     flex-wrap: wrap;
     gap: 3%;
-    padding: 3%;
+    padding: 6%;
 }
+
 
 h1 {
     font-size: 1rem;
@@ -108,6 +111,10 @@ h1 {
     word-wrap: break-word;
 }
 
+.link-style {
+    text-decoration: none;
+    color: inherit;
+}
 .card img {
     height: 250px;
     max-width: 100%;
@@ -119,9 +126,7 @@ h1 {
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
-    gap: 2%;
-    width: 100%;
-    
+    width: 100%;  
 }
 
 .card img:hover{
