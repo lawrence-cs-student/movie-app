@@ -1,8 +1,8 @@
 const express = require("express");
 const { urlencoded, json } = require("express");
-import { get } from 'https';
+const https = require('https');
+const cors = require('cors');
 const app = express();
-import cors from 'cors';
 app.use(urlencoded({ extended: true }));
 app.use(json());
 app.use(cors());
