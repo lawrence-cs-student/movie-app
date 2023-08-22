@@ -35,10 +35,10 @@ export default function Home(props) {
             </div>
             <div className="results">
                 {props.movies.results.map((object, index) => (
-                    <Link key={object.id} to={`/movie/${object.id}`}>
+                    <Link key={object.id} to={`/movie/${object.id}`} className="link-style">
                         <div className="card" >
                             <div>
-                                <img src={`https://image.tmdb.org/t/p/w500${object.poster_path}`}></img>
+                                <img src={`https://image.tmdb.org/t/p/w500${object.poster_path}`} alt="not available"></img>
                             </div>
                             <h1>{object.title}</h1>
                         </div>
