@@ -33,7 +33,7 @@ export default function App () {
     };
 
     return (
-        <div id="body">
+        <div id="container">
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home set={setMovies} function={handleSubmit} movies={movies} />}></Route>
