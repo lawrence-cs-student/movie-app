@@ -23,7 +23,7 @@ body {
     overflow-x: hidden;
 }
 
-#body {
+#container {
     --bg-image: url("https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80");
     --bg-image-opacity: 0.08;
     position: relative;
@@ -32,7 +32,7 @@ body {
     background-color: #110B1D;
 }
 
-#body::before {
+#container::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -211,30 +211,49 @@ a {
 
 
 @media screen and (max-width: 1024px) {
+
     form {
         width: 80%; 
     }
 
     svg {
         left: 85%;
-        max-width: 5%;
-        max-height: 90%;
+        max-width: 10%;
+        max-height: 100%;
     }
 
-    #body::before {
+    #container {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* #container::before {
         display: none;
+    } */
+
+    #main {
+
+        width: 100%;
+        height: 100%;
     }
 
     .results {
         justify-content: center;
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        gap: 8%;
     }
 
     .card {
-        width: 100%;
+        width: 100%;;
+        height: 100%;
+        gap: 5%;
     }
 
     a {
         width: 40%;
+        margin-bottom: 2%;
     }
 
     /* Movie JSX section */
