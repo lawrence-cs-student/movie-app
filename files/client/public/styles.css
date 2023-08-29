@@ -3,6 +3,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
    
 }
 
@@ -218,8 +219,8 @@ a {
 
     svg {
         left: 85%;
-        max-width: 10%;
-        max-height: 100%;
+        max-width: 7%;
+        max-height: 85%;
     }
 
     #container {
