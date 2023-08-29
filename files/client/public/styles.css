@@ -263,7 +263,7 @@ a {
     }
     
     .movie-details > p:nth-child(3) {
-        grid-area: 28 / 5 / 29 / 35;
+        grid-area: 29 / 5 / 30 / 35;
     }
     
     .movie-details > p:nth-child(4) {
