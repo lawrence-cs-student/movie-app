@@ -30,7 +30,7 @@ export default function Home(props) {
                         onChange= {(event) => {setUserInput(event.target.value)}}
                         onKeyDown = {HandleEnter}>
                     </input>
-                    <svg onClick= {HandleClick} xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 48 48"><mask id="ipSSearch0"><g fill="none" stroke-linejoin="round" stroke-width="4"><path fill="#fff" stroke="#fff" d="M21 38c9.389 0 17-7.611 17-17S30.389 4 21 4S4 11.611 4 21s7.611 17 17 17Z"/><path stroke="#000" stroke-linecap="round" d="M26.657 14.343A7.975 7.975 0 0 0 21 12a7.975 7.975 0 0 0-5.657 2.343"/><path stroke="#fff" stroke-linecap="round" d="m33.222 33.222l8.485 8.485"/></g></mask><path fill="#825b23" d="M0 0h48v48H0z" mask="url(#ipSSearch0)"/></svg>
+                    <svg onClick={HandleClick} xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="white" d="m19.6 21l-6.3-6.3q-.75.6-1.725.95T9.5 16q-2.725 0-4.612-1.888T3 9.5q0-2.725 1.888-4.612T9.5 3q2.725 0 4.612 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l6.3 6.3l-1.4 1.4ZM9.5 14q1.875 0 3.188-1.313T14 9.5q0-1.875-1.313-3.188T9.5 5Q7.625 5 6.312 6.313T5 9.5q0 1.875 1.313 3.188T9.5 14Z"/></svg>
                 </form>
             </div>
             <div className="results">
